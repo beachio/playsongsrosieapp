@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D7669BC159F564B002C95FA /* 1 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669AA159F564B002C95FA /* 1 Audio Track.mp3 */; };
+		2D7669BD159F564B002C95FA /* 10 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669AB159F564B002C95FA /* 10 Audio Track.mp3 */; };
+		2D7669BE159F564B002C95FA /* 11 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669AC159F564B002C95FA /* 11 Audio Track.mp3 */; };
+		2D7669BF159F564B002C95FA /* 12 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669AD159F564B002C95FA /* 12 Audio Track.mp3 */; };
+		2D7669C0159F564B002C95FA /* 13 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669AE159F564B002C95FA /* 13 Audio Track.mp3 */; };
+		2D7669C1159F564B002C95FA /* 14 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669AF159F564B002C95FA /* 14 Audio Track.mp3 */; };
+		2D7669C2159F564B002C95FA /* 15 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669B0159F564B002C95FA /* 15 Audio Track.mp3 */; };
+		2D7669C3159F564B002C95FA /* 16 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669B1159F564B002C95FA /* 16 Audio Track.mp3 */; };
+		2D7669C4159F564B002C95FA /* 17 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669B2159F564B002C95FA /* 17 Audio Track.mp3 */; };
+		2D7669C5159F564B002C95FA /* 18 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669B3159F564B002C95FA /* 18 Audio Track.mp3 */; };
+		2D7669C6159F564B002C95FA /* 2 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669B4159F564B002C95FA /* 2 Audio Track.mp3 */; };
+		2D7669C7159F564B002C95FA /* 3 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669B5159F564B002C95FA /* 3 Audio Track.mp3 */; };
+		2D7669C8159F564B002C95FA /* 4 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669B6159F564B002C95FA /* 4 Audio Track.mp3 */; };
+		2D7669C9159F564B002C95FA /* 5 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669B7159F564B002C95FA /* 5 Audio Track.mp3 */; };
+		2D7669CA159F564B002C95FA /* 6 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669B8159F564B002C95FA /* 6 Audio Track.mp3 */; };
+		2D7669CB159F564B002C95FA /* 7 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669B9159F564B002C95FA /* 7 Audio Track.mp3 */; };
+		2D7669CC159F564B002C95FA /* 8 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669BA159F564B002C95FA /* 8 Audio Track.mp3 */; };
+		2D7669CD159F564B002C95FA /* 9 Audio Track.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669BB159F564B002C95FA /* 9 Audio Track.mp3 */; };
+		2D7669D2159F5771002C95FA /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7669D0159F5771002C95FA /* MenuViewController.m */; };
+		2D7669D3159F5771002C95FA /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669D1159F5771002C95FA /* MenuViewController.xib */; };
+		2D7669D5159F57B8002C95FA /* MenuViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D7669D4159F57B8002C95FA /* MenuViewController~ipad.xib */; };
+		2D766A14159F5AA9002C95FA /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D766A12159F5AA9002C95FA /* TitleViewController.m */; };
+		2D766A15159F5AA9002C95FA /* TitleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D766A13159F5AA9002C95FA /* TitleViewController.xib */; };
+		2D766A19159F5AC9002C95FA /* SongListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D766A17159F5AC9002C95FA /* SongListViewController.m */; };
+		2D766A1A159F5AC9002C95FA /* SongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D766A18159F5AC9002C95FA /* SongListViewController.xib */; };
+		2D766A1E159F5AE0002C95FA /* SongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D766A1C159F5AE0002C95FA /* SongViewController.m */; };
+		2D766A1F159F5AE0002C95FA /* SongViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D766A1D159F5AE0002C95FA /* SongViewController.xib */; };
+		2D766A21159F5B07002C95FA /* TitleViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D766A20159F5B07002C95FA /* TitleViewController~ipad.xib */; };
+		2D766A23159F5B19002C95FA /* SongListViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D766A22159F5B19002C95FA /* SongListViewController~ipad.xib */; };
+		2D766A25159F5B2B002C95FA /* SongViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D766A24159F5B2B002C95FA /* SongViewController~ipad.xib */; };
+		2D766A2A159F5DC5002C95FA /* OBShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D766A27159F5DC4002C95FA /* OBShapedButton.m */; };
+		2D766A2B159F5DC5002C95FA /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D766A29159F5DC4002C95FA /* UIImage+ColorAtPixel.m */; };
 		2D77645F159ED5EE00B579A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D77645E159ED5EE00B579A7 /* UIKit.framework */; };
 		2D776461159ED5EE00B579A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D776460159ED5EE00B579A7 /* Foundation.framework */; };
 		2D776463159ED5EE00B579A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D776462159ED5EE00B579A7 /* CoreGraphics.framework */; };
@@ -106,6 +138,44 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D7669AA159F564B002C95FA /* 1 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669AB159F564B002C95FA /* 10 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669AC159F564B002C95FA /* 11 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "11 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669AD159F564B002C95FA /* 12 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "12 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669AE159F564B002C95FA /* 13 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "13 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669AF159F564B002C95FA /* 14 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "14 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669B0159F564B002C95FA /* 15 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "15 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669B1159F564B002C95FA /* 16 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "16 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669B2159F564B002C95FA /* 17 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "17 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669B3159F564B002C95FA /* 18 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "18 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669B4159F564B002C95FA /* 2 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "2 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669B5159F564B002C95FA /* 3 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "3 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669B6159F564B002C95FA /* 4 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "4 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669B7159F564B002C95FA /* 5 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "5 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669B8159F564B002C95FA /* 6 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "6 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669B9159F564B002C95FA /* 7 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "7 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669BA159F564B002C95FA /* 8 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "8 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669BB159F564B002C95FA /* 9 Audio Track.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "9 Audio Track.mp3"; sourceTree = "<group>"; };
+		2D7669CF159F5771002C95FA /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		2D7669D0159F5771002C95FA /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		2D7669D1159F5771002C95FA /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		2D7669D4159F57B8002C95FA /* MenuViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MenuViewController~ipad.xib"; sourceTree = "<group>"; };
+		2D766A11159F5AA9002C95FA /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
+		2D766A12159F5AA9002C95FA /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
+		2D766A13159F5AA9002C95FA /* TitleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleViewController.xib; sourceTree = "<group>"; };
+		2D766A16159F5AC9002C95FA /* SongListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongListViewController.h; sourceTree = "<group>"; };
+		2D766A17159F5AC9002C95FA /* SongListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongListViewController.m; sourceTree = "<group>"; };
+		2D766A18159F5AC9002C95FA /* SongListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListViewController.xib; sourceTree = "<group>"; };
+		2D766A1B159F5AE0002C95FA /* SongViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongViewController.h; sourceTree = "<group>"; };
+		2D766A1C159F5AE0002C95FA /* SongViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongViewController.m; sourceTree = "<group>"; };
+		2D766A1D159F5AE0002C95FA /* SongViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongViewController.xib; sourceTree = "<group>"; };
+		2D766A20159F5B07002C95FA /* TitleViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TitleViewController~ipad.xib"; sourceTree = "<group>"; };
+		2D766A22159F5B19002C95FA /* SongListViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SongListViewController~ipad.xib"; sourceTree = "<group>"; };
+		2D766A24159F5B2B002C95FA /* SongViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "SongViewController~ipad.xib"; sourceTree = "<group>"; };
+		2D766A26159F5DC4002C95FA /* OBShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBShapedButton.h; sourceTree = "<group>"; };
+		2D766A27159F5DC4002C95FA /* OBShapedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBShapedButton.m; sourceTree = "<group>"; };
+		2D766A28159F5DC4002C95FA /* UIImage+ColorAtPixel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorAtPixel.h"; sourceTree = "<group>"; };
+		2D766A29159F5DC4002C95FA /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
 		2D77645A159ED5EE00B579A7 /* rosieapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rosieapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D77645E159ED5EE00B579A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2D776460159ED5EE00B579A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -222,6 +292,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D7669A9159F564B002C95FA /* Rosie The Little Red Car */ = {
+			isa = PBXGroup;
+			children = (
+				2D7669AA159F564B002C95FA /* 1 Audio Track.mp3 */,
+				2D7669AB159F564B002C95FA /* 10 Audio Track.mp3 */,
+				2D7669AC159F564B002C95FA /* 11 Audio Track.mp3 */,
+				2D7669AD159F564B002C95FA /* 12 Audio Track.mp3 */,
+				2D7669AE159F564B002C95FA /* 13 Audio Track.mp3 */,
+				2D7669AF159F564B002C95FA /* 14 Audio Track.mp3 */,
+				2D7669B0159F564B002C95FA /* 15 Audio Track.mp3 */,
+				2D7669B1159F564B002C95FA /* 16 Audio Track.mp3 */,
+				2D7669B2159F564B002C95FA /* 17 Audio Track.mp3 */,
+				2D7669B3159F564B002C95FA /* 18 Audio Track.mp3 */,
+				2D7669B4159F564B002C95FA /* 2 Audio Track.mp3 */,
+				2D7669B5159F564B002C95FA /* 3 Audio Track.mp3 */,
+				2D7669B6159F564B002C95FA /* 4 Audio Track.mp3 */,
+				2D7669B7159F564B002C95FA /* 5 Audio Track.mp3 */,
+				2D7669B8159F564B002C95FA /* 6 Audio Track.mp3 */,
+				2D7669B9159F564B002C95FA /* 7 Audio Track.mp3 */,
+				2D7669BA159F564B002C95FA /* 8 Audio Track.mp3 */,
+				2D7669BB159F564B002C95FA /* 9 Audio Track.mp3 */,
+			);
+			path = "Rosie The Little Red Car";
+			sourceTree = "<group>";
+		};
+		2D766A2C159F5DCC002C95FA /* OBShapedButton */ = {
+			isa = PBXGroup;
+			children = (
+				2D766A26159F5DC4002C95FA /* OBShapedButton.h */,
+				2D766A27159F5DC4002C95FA /* OBShapedButton.m */,
+				2D766A28159F5DC4002C95FA /* UIImage+ColorAtPixel.h */,
+				2D766A29159F5DC4002C95FA /* UIImage+ColorAtPixel.m */,
+			);
+			name = OBShapedButton;
+			sourceTree = "<group>";
+		};
 		2D77644F159ED5EE00B579A7 = {
 			isa = PBXGroup;
 			children = (
@@ -253,9 +359,26 @@
 			isa = PBXGroup;
 			children = (
 				2D77646D159ED5EE00B579A7 /* AppDelegate.h */,
+				2D7669CF159F5771002C95FA /* MenuViewController.h */,
+				2D766A16159F5AC9002C95FA /* SongListViewController.h */,
+				2D766A1B159F5AE0002C95FA /* SongViewController.h */,
+				2D766A11159F5AA9002C95FA /* TitleViewController.h */,
 				2D77646E159ED5EE00B579A7 /* AppDelegate.m */,
-				2D776465159ED5EE00B579A7 /* Supporting Files */,
+				2D7669D0159F5771002C95FA /* MenuViewController.m */,
+				2D766A17159F5AC9002C95FA /* SongListViewController.m */,
+				2D766A1C159F5AE0002C95FA /* SongViewController.m */,
+				2D766A12159F5AA9002C95FA /* TitleViewController.m */,
+				2D7669D1159F5771002C95FA /* MenuViewController.xib */,
+				2D7669D4159F57B8002C95FA /* MenuViewController~ipad.xib */,
+				2D766A18159F5AC9002C95FA /* SongListViewController.xib */,
+				2D766A22159F5B19002C95FA /* SongListViewController~ipad.xib */,
+				2D766A1D159F5AE0002C95FA /* SongViewController.xib */,
+				2D766A24159F5B2B002C95FA /* SongViewController~ipad.xib */,
+				2D766A13159F5AA9002C95FA /* TitleViewController.xib */,
+				2D766A20159F5B07002C95FA /* TitleViewController~ipad.xib */,
+				2D766A2C159F5DCC002C95FA /* OBShapedButton */,
 				2D77647B159ED88A00B579A7 /* resources */,
+				2D776465159ED5EE00B579A7 /* Supporting Files */,
 			);
 			path = rosieapp;
 			sourceTree = "<group>";
@@ -274,6 +397,7 @@
 		2D77647B159ED88A00B579A7 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				2D7669A9159F564B002C95FA /* Rosie The Little Red Car */,
 				2D77647C159ED88A00B579A7 /* menu page */,
 				2D776485159ED88A00B579A7 /* song list page */,
 				2D776490159ED88A00B579A7 /* song page */,
@@ -541,6 +665,32 @@
 				2D776532159EE74900B579A7 /* with_nickie_and_gill.png in Resources */,
 				2D776533159EE74900B579A7 /* with_nickie_and_gill~ipad.png in Resources */,
 				2D776535159EE81000B579A7 /* Default-Portrait.png in Resources */,
+				2D7669BC159F564B002C95FA /* 1 Audio Track.mp3 in Resources */,
+				2D7669BD159F564B002C95FA /* 10 Audio Track.mp3 in Resources */,
+				2D7669BE159F564B002C95FA /* 11 Audio Track.mp3 in Resources */,
+				2D7669BF159F564B002C95FA /* 12 Audio Track.mp3 in Resources */,
+				2D7669C0159F564B002C95FA /* 13 Audio Track.mp3 in Resources */,
+				2D7669C1159F564B002C95FA /* 14 Audio Track.mp3 in Resources */,
+				2D7669C2159F564B002C95FA /* 15 Audio Track.mp3 in Resources */,
+				2D7669C3159F564B002C95FA /* 16 Audio Track.mp3 in Resources */,
+				2D7669C4159F564B002C95FA /* 17 Audio Track.mp3 in Resources */,
+				2D7669C5159F564B002C95FA /* 18 Audio Track.mp3 in Resources */,
+				2D7669C6159F564B002C95FA /* 2 Audio Track.mp3 in Resources */,
+				2D7669C7159F564B002C95FA /* 3 Audio Track.mp3 in Resources */,
+				2D7669C8159F564B002C95FA /* 4 Audio Track.mp3 in Resources */,
+				2D7669C9159F564B002C95FA /* 5 Audio Track.mp3 in Resources */,
+				2D7669CA159F564B002C95FA /* 6 Audio Track.mp3 in Resources */,
+				2D7669CB159F564B002C95FA /* 7 Audio Track.mp3 in Resources */,
+				2D7669CC159F564B002C95FA /* 8 Audio Track.mp3 in Resources */,
+				2D7669CD159F564B002C95FA /* 9 Audio Track.mp3 in Resources */,
+				2D7669D3159F5771002C95FA /* MenuViewController.xib in Resources */,
+				2D7669D5159F57B8002C95FA /* MenuViewController~ipad.xib in Resources */,
+				2D766A15159F5AA9002C95FA /* TitleViewController.xib in Resources */,
+				2D766A1A159F5AC9002C95FA /* SongListViewController.xib in Resources */,
+				2D766A1F159F5AE0002C95FA /* SongViewController.xib in Resources */,
+				2D766A21159F5B07002C95FA /* TitleViewController~ipad.xib in Resources */,
+				2D766A23159F5B19002C95FA /* SongListViewController~ipad.xib in Resources */,
+				2D766A25159F5B2B002C95FA /* SongViewController~ipad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +703,12 @@
 			files = (
 				2D77646B159ED5EE00B579A7 /* main.m in Sources */,
 				2D77646F159ED5EE00B579A7 /* AppDelegate.m in Sources */,
+				2D7669D2159F5771002C95FA /* MenuViewController.m in Sources */,
+				2D766A14159F5AA9002C95FA /* TitleViewController.m in Sources */,
+				2D766A19159F5AC9002C95FA /* SongListViewController.m in Sources */,
+				2D766A1E159F5AE0002C95FA /* SongViewController.m in Sources */,
+				2D766A2A159F5DC5002C95FA /* OBShapedButton.m in Sources */,
+				2D766A2B159F5DC5002C95FA /* UIImage+ColorAtPixel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
