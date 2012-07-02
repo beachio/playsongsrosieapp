@@ -7,6 +7,7 @@
 //
 
 #import "SongViewController.h"
+#import "UIDevice+Hardware.h"
 
 @implementation SongViewController
 
@@ -42,10 +43,16 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+// Override to allow orientations other than the default portrait orientation.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	// Overriden to allow any orientation.
+	if (![UIDevice isIPad]) {
+		return NO;
+	}
+	if(interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
+		return YES;
+	else
+		return NO;
 }
 
 @end

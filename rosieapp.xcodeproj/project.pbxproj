@@ -135,6 +135,8 @@
 		2D776532159EE74900B579A7 /* with_nickie_and_gill.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D776526159EE74900B579A7 /* with_nickie_and_gill.png */; };
 		2D776533159EE74900B579A7 /* with_nickie_and_gill~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D776527159EE74900B579A7 /* with_nickie_and_gill~ipad.png */; };
 		2D776535159EE81000B579A7 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D776534159EE81000B579A7 /* Default-Portrait.png */; };
+		2D97987A15A041C00098E4ED /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97987915A041C00098E4ED /* UIDevice+Hardware.m */; };
+		2D97987C15A04A2E0098E4ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D97987B15A04A2E0098E4ED /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -276,6 +278,9 @@
 		2D776526159EE74900B579A7 /* with_nickie_and_gill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = with_nickie_and_gill.png; sourceTree = "<group>"; };
 		2D776527159EE74900B579A7 /* with_nickie_and_gill~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "with_nickie_and_gill~ipad.png"; sourceTree = "<group>"; };
 		2D776534159EE81000B579A7 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		2D97987815A041C00098E4ED /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
+		2D97987915A041C00098E4ED /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
+		2D97987B15A04A2E0098E4ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +288,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D97987C15A04A2E0098E4ED /* QuartzCore.framework in Frameworks */,
 				2D77645F159ED5EE00B579A7 /* UIKit.framework in Frameworks */,
 				2D776461159ED5EE00B579A7 /* Foundation.framework in Frameworks */,
 				2D776463159ED5EE00B579A7 /* CoreGraphics.framework in Frameworks */,
@@ -348,6 +354,7 @@
 		2D77645D159ED5EE00B579A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D97987B15A04A2E0098E4ED /* QuartzCore.framework */,
 				2D77645E159ED5EE00B579A7 /* UIKit.framework */,
 				2D776460159ED5EE00B579A7 /* Foundation.framework */,
 				2D776462159ED5EE00B579A7 /* CoreGraphics.framework */,
@@ -358,27 +365,29 @@
 		2D776464159ED5EE00B579A7 /* rosieapp */ = {
 			isa = PBXGroup;
 			children = (
+				2D97987815A041C00098E4ED /* UIDevice+Hardware.h */,
+				2D97987915A041C00098E4ED /* UIDevice+Hardware.m */,
 				2D77646D159ED5EE00B579A7 /* AppDelegate.h */,
-				2D7669CF159F5771002C95FA /* MenuViewController.h */,
-				2D766A16159F5AC9002C95FA /* SongListViewController.h */,
-				2D766A1B159F5AE0002C95FA /* SongViewController.h */,
-				2D766A11159F5AA9002C95FA /* TitleViewController.h */,
 				2D77646E159ED5EE00B579A7 /* AppDelegate.m */,
+				2D7669CF159F5771002C95FA /* MenuViewController.h */,
 				2D7669D0159F5771002C95FA /* MenuViewController.m */,
-				2D766A17159F5AC9002C95FA /* SongListViewController.m */,
-				2D766A1C159F5AE0002C95FA /* SongViewController.m */,
-				2D766A12159F5AA9002C95FA /* TitleViewController.m */,
 				2D7669D1159F5771002C95FA /* MenuViewController.xib */,
 				2D7669D4159F57B8002C95FA /* MenuViewController~ipad.xib */,
-				2D766A18159F5AC9002C95FA /* SongListViewController.xib */,
-				2D766A22159F5B19002C95FA /* SongListViewController~ipad.xib */,
-				2D766A1D159F5AE0002C95FA /* SongViewController.xib */,
-				2D766A24159F5B2B002C95FA /* SongViewController~ipad.xib */,
-				2D766A13159F5AA9002C95FA /* TitleViewController.xib */,
-				2D766A20159F5B07002C95FA /* TitleViewController~ipad.xib */,
 				2D766A2C159F5DCC002C95FA /* OBShapedButton */,
 				2D77647B159ED88A00B579A7 /* resources */,
+				2D766A16159F5AC9002C95FA /* SongListViewController.h */,
+				2D766A17159F5AC9002C95FA /* SongListViewController.m */,
+				2D766A18159F5AC9002C95FA /* SongListViewController.xib */,
+				2D766A22159F5B19002C95FA /* SongListViewController~ipad.xib */,
+				2D766A1B159F5AE0002C95FA /* SongViewController.h */,
+				2D766A1C159F5AE0002C95FA /* SongViewController.m */,
+				2D766A1D159F5AE0002C95FA /* SongViewController.xib */,
+				2D766A24159F5B2B002C95FA /* SongViewController~ipad.xib */,
 				2D776465159ED5EE00B579A7 /* Supporting Files */,
+				2D766A11159F5AA9002C95FA /* TitleViewController.h */,
+				2D766A12159F5AA9002C95FA /* TitleViewController.m */,
+				2D766A13159F5AA9002C95FA /* TitleViewController.xib */,
+				2D766A20159F5B07002C95FA /* TitleViewController~ipad.xib */,
 			);
 			path = rosieapp;
 			sourceTree = "<group>";
@@ -709,6 +718,7 @@
 				2D766A1E159F5AE0002C95FA /* SongViewController.m in Sources */,
 				2D766A2A159F5DC5002C95FA /* OBShapedButton.m in Sources */,
 				2D766A2B159F5DC5002C95FA /* UIImage+ColorAtPixel.m in Sources */,
+				2D97987A15A041C00098E4ED /* UIDevice+Hardware.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

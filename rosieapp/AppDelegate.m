@@ -7,16 +7,17 @@
 //
 
 #import "AppDelegate.h"
-
+#import "TitleViewController.h"
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize nav;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    TitleViewController *title = [[TitleViewController alloc] initWithNibName:@"TitleViewController" bundle:nil];
+	[self.window addSubview:title.view];
     [self.window makeKeyAndVisible];
     return YES;
 }

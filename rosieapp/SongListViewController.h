@@ -7,7 +7,35 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OBShapedButton.h"
 
-@interface SongListViewController : UIViewController
+@interface SongListViewController : UIViewController{
+    NSMutableArray *songList;
+    NSMutableArray *welcomeMessages;
+    NSMutableArray *songChoiceMessages;
+    
+    NSMutableArray *cloudFrame1;
+    NSMutableArray *cloudFrame2;
+    
+    NSInteger trackNumber;
+    
+    NSTimer *msgTimer;
+    NSInteger currentMsg;
+    
+    NSMutableArray *clouds;
+    
+    IBOutlet UIImageView *bubble;
+    
+    IBOutlet UILabel *rabbitMsg;
+    
+    IBOutlet UIScrollView *scrollView;
+
+}
+
+-(IBAction)back;
+-(IBAction)randomSong;
+-(void)playSong;
+-(void)setRabbitMsgText:(NSString *)msg;
+-(void)loadScrollViewWithPage:(NSInteger)page;
 
 @end

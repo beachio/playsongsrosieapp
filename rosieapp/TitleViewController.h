@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MenuViewController.h"
 
-@interface TitleViewController : UIViewController
+@interface TitleViewController : UIViewController{
+    MenuViewController *menuController;
+    IBOutlet UIImageView *littleCar;
+    IBOutlet UIImageView *lollipop;
+    IBOutlet UIImageView *playSong;
+    IBOutlet UIImageView *nickieJill;
+    
+    CGRect littleCarFrame;
+    CGRect nickieJillFrame;
+}
 
 @end

@@ -10,4 +10,8 @@
 
 @interface MenuViewController : UIViewController
 
+-(IBAction)showSongList:(id)sender;
+-(IBAction)showAbout:(id)sender;
+-(IBAction)showShare:(id)sender;
+
 @end

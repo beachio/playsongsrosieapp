@@ -7,6 +7,8 @@
 //
 
 #import "MenuViewController.h"
+#import "SongListViewController.h"
+#import "UIDevice+Hardware.h"
 
 @implementation MenuViewController
 
@@ -18,6 +20,23 @@
     }
     return self;
 }
+
+-(IBAction)showSongList:(id)sender{
+    SongListViewController *songlist = [[SongListViewController alloc] initWithNibName:@"SongListViewController" bundle:nil];
+    [self.navigationController pushViewController:songlist animated:YES];
+}
+
+
+-(IBAction)showAbout:(id)sender{
+
+}
+
+
+-(IBAction)showShare:(id)sender{
+
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -42,10 +61,16 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+// Override to allow orientations other than the default portrait orientation.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	// Overriden to allow any orientation.
+	if (![UIDevice isIPad]) {
+		return NO;
+	}
+	if(interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
+		return YES;
+	else
+		return NO;
 }
 
 @end
