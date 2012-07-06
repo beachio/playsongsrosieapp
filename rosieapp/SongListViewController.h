@@ -29,11 +29,13 @@
     IBOutlet UILabel *rabbitMsg;
     
     IBOutlet UIScrollView *scrollView;
+    
+    IBOutlet UIButton *rabbit;
 
 }
 
 -(IBAction)back;
--(IBAction)randomSong;
+-(IBAction)randomSong:(id)sender;
 -(void)playSong;
 -(void)setRabbitMsgText:(NSString *)msg;
 -(void)loadScrollViewWithPage:(NSInteger)page;

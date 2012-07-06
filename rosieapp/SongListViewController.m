@@ -8,6 +8,7 @@
 
 #import "SongListViewController.h"
 #import "UIDevice+Hardware.h"
+#import "SongViewController.h"
 
 @implementation SongListViewController
 
@@ -167,6 +168,7 @@
     trackNumber = [(UIButton *)sender tag];
     NSString * msg = [songChoiceMessages objectAtIndex:arc4random()%[songChoiceMessages count]];
     [self setRabbitMsgText:msg];
+    [rabbit setEnabled:NO];
     [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(playSong) userInfo:nil repeats:NO];
 }
 
@@ -198,13 +200,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(IBAction)randomSong{
+-(IBAction)randomSong:(id)sender{
     if ([msgTimer isValid]) {
         NSLog(@"Timer invalidated");
         [msgTimer invalidate];
     }
     trackNumber = arc4random()%[songList count] + 1;
     [self setRabbitMsgText:@"Here we go..."];
+    [rabbit setEnabled:NO];
     [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(playSong) userInfo:nil repeats:NO];
 }
 
@@ -221,6 +224,9 @@
     rabbitMsg.hidden = YES;
     NSLog(@"%d", trackNumber);
     NSLog(@"play the song");
+    SongViewController *songController = [[SongViewController alloc] initWithIndex:trackNumber];
+    [self.navigationController pushViewController:songController animated:YES];
+    [rabbit setEnabled:YES];
 }
 
 - (void)viewDidUnload

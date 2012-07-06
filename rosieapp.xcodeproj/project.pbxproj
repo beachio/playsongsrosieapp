@@ -137,6 +137,10 @@
 		2D776535159EE81000B579A7 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D776534159EE81000B579A7 /* Default-Portrait.png */; };
 		2D97987A15A041C00098E4ED /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97987915A041C00098E4ED /* UIDevice+Hardware.m */; };
 		2D97987C15A04A2E0098E4ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D97987B15A04A2E0098E4ED /* QuartzCore.framework */; };
+		2DFCB6AB15A73E2400A99B79 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFCB6AA15A73E2400A99B79 /* AVFoundation.framework */; };
+		2DFCB6B015A749CA00A99B79 /* headlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DFCB6AD15A749CA00A99B79 /* headlight.png */; };
+		2DFCB6B115A749CA00A99B79 /* headlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DFCB6AE15A749CA00A99B79 /* headlight@2x.png */; };
+		2DFCB6B215A749CA00A99B79 /* headlight~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DFCB6AF15A749CA00A99B79 /* headlight~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -281,6 +285,10 @@
 		2D97987815A041C00098E4ED /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
 		2D97987915A041C00098E4ED /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
 		2D97987B15A04A2E0098E4ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2DFCB6AA15A73E2400A99B79 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2DFCB6AD15A749CA00A99B79 /* headlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headlight.png; sourceTree = "<group>"; };
+		2DFCB6AE15A749CA00A99B79 /* headlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headlight@2x.png"; sourceTree = "<group>"; };
+		2DFCB6AF15A749CA00A99B79 /* headlight~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headlight~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +296,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DFCB6AB15A73E2400A99B79 /* AVFoundation.framework in Frameworks */,
 				2D97987C15A04A2E0098E4ED /* QuartzCore.framework in Frameworks */,
 				2D77645F159ED5EE00B579A7 /* UIKit.framework in Frameworks */,
 				2D776461159ED5EE00B579A7 /* Foundation.framework in Frameworks */,
@@ -354,6 +363,7 @@
 		2D77645D159ED5EE00B579A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2DFCB6AA15A73E2400A99B79 /* AVFoundation.framework */,
 				2D97987B15A04A2E0098E4ED /* QuartzCore.framework */,
 				2D77645E159ED5EE00B579A7 /* UIKit.framework */,
 				2D776460159ED5EE00B579A7 /* Foundation.framework */,
@@ -486,6 +496,9 @@
 		2D776490159ED88A00B579A7 /* song page */ = {
 			isa = PBXGroup;
 			children = (
+				2DFCB6AD15A749CA00A99B79 /* headlight.png */,
+				2DFCB6AE15A749CA00A99B79 /* headlight@2x.png */,
+				2DFCB6AF15A749CA00A99B79 /* headlight~ipad.png */,
 				2D776491159ED88A00B579A7 /* next.png */,
 				2D776492159ED88A00B579A7 /* next@2x.png */,
 				2D776493159ED88A00B579A7 /* next~ipad.png */,
@@ -700,6 +713,9 @@
 				2D766A21159F5B07002C95FA /* TitleViewController~ipad.xib in Resources */,
 				2D766A23159F5B19002C95FA /* SongListViewController~ipad.xib in Resources */,
 				2D766A25159F5B2B002C95FA /* SongViewController~ipad.xib in Resources */,
+				2DFCB6B015A749CA00A99B79 /* headlight.png in Resources */,
+				2DFCB6B115A749CA00A99B79 /* headlight@2x.png in Resources */,
+				2DFCB6B215A749CA00A99B79 /* headlight~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

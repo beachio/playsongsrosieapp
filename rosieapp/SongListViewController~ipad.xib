@@ -224,6 +224,14 @@
 					<int key="connectionID">19</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">rabbit</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="200054372"/>
+					</object>
+					<int key="connectionID">21</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">back</string>
 						<reference key="source" ref="656848646"/>
@@ -242,12 +250,12 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
-						<string key="label">randomSong</string>
+						<string key="label">randomSong:</string>
 						<reference key="source" ref="200054372"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
-					<int key="connectionID">14</int>
+					<int key="connectionID">20</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -333,7 +341,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">19</int>
+			<int key="maxID">21</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -350,20 +358,21 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="back">id</string>
-						<string key="randomSong">id</string>
+						<string key="randomSong:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="back">
 							<string key="name">back</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="randomSong">
-							<string key="name">randomSong</string>
+						<object class="IBActionInfo" key="randomSong:">
+							<string key="name">randomSong:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="bubble">UIImageView</string>
+						<string key="rabbit">UIButton</string>
 						<string key="rabbitMsg">UILabel</string>
 						<string key="scrollView">UIScrollView</string>
 					</dictionary>
@@ -371,6 +380,10 @@
 						<object class="IBToOneOutletInfo" key="bubble">
 							<string key="name">bubble</string>
 							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="rabbit">
+							<string key="name">rabbit</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="rabbitMsg">
 							<string key="name">rabbitMsg</string>
