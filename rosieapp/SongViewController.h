@@ -20,6 +20,7 @@
     IBOutlet UIImageView *headlight;
     NSTimer *blinker;
     NSInteger blinkCount;
+    AVAudioPlayer *honk;
 }
 
 

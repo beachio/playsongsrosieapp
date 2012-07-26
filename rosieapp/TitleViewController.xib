@@ -52,7 +52,7 @@
 					<object class="IBUIImageView" id="858275266">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{144, 112}, {161, 34}}</string>
+						<string key="NSFrame">{{142, 129}, {168, 18}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="525683162"/>
@@ -280,7 +280,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="little_red_car.png">{161, 34}</string>
+			<string key="little_red_car.png">{168, 18}</string>
 			<string key="lollipop.png">{126, 96}</string>
 			<string key="playsongs.png">{207, 61}</string>
 			<string key="title_bg.png">{320, 480}</string>

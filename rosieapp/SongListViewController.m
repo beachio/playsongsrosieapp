@@ -98,6 +98,9 @@
     
     msgTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(switchMsg) userInfo:nil repeats:YES];    
     [msgTimer fire];
+    
+    overlay = [[UIView alloc] initWithFrame:self.view.bounds];
+    overlay.backgroundColor = [UIColor clearColor];
 }
 
 -(void)loadScrollViewWithPage:(NSInteger)page{
@@ -168,7 +171,7 @@
     trackNumber = [(UIButton *)sender tag];
     NSString * msg = [songChoiceMessages objectAtIndex:arc4random()%[songChoiceMessages count]];
     [self setRabbitMsgText:msg];
-    [rabbit setEnabled:NO];
+    [self.view addSubview:overlay];
     [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(playSong) userInfo:nil repeats:NO];
 }
 
@@ -207,7 +210,7 @@
     }
     trackNumber = arc4random()%[songList count] + 1;
     [self setRabbitMsgText:@"Here we go..."];
-    [rabbit setEnabled:NO];
+    [self.view addSubview:overlay];
     [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(playSong) userInfo:nil repeats:NO];
 }
 
@@ -226,7 +229,7 @@
     NSLog(@"play the song");
     SongViewController *songController = [[SongViewController alloc] initWithIndex:trackNumber];
     [self.navigationController pushViewController:songController animated:YES];
-    [rabbit setEnabled:YES];
+    [overlay removeFromSuperview];
 }
 
 - (void)viewDidUnload

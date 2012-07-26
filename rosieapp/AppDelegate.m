@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "TitleViewController.h"
+#import "Facebook.h"
+#import "MenuViewController.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -59,6 +62,14 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+	Facebook *facebook = [(MenuViewController *)[[nav viewControllers] objectAtIndex:0] facebook];
+	if (facebook) {
+		return [facebook handleOpenURL:url];
+	}
+	return NO;
 }
 
 @end

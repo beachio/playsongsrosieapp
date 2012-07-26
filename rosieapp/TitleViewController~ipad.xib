@@ -66,7 +66,7 @@
 					<object class="IBUIImageView" id="77461487">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{362, 252}, {322, 67}}</string>
+						<string key="NSFrame">{{374, 274}, {345, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="627043156"/>
@@ -97,6 +97,7 @@
 						<string key="NSFrame">{{450, 907}, {330, 121}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
@@ -175,10 +176,10 @@
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="750574159"/>
-							<reference ref="77461487"/>
 							<reference ref="295610191"/>
 							<reference ref="229508296"/>
 							<reference ref="627043156"/>
+							<reference ref="77461487"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -279,7 +280,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="little_red_car~ipad.png">{322, 67}</string>
+			<string key="little_red_car~ipad.png">{345, 37}</string>
 			<string key="lollipop~ipad.png">{251, 192}</string>
 			<string key="playsongs~ipad.png">{413, 122}</string>
 			<string key="title_bg~ipad.png">{768, 1024}</string>

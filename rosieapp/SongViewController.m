@@ -66,7 +66,7 @@
 	NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], songTitle]];
 	NSError *error;
 	self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-    
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
 	if (self.player == nil){
 		NSLog(@"%@",[error localizedDescription]);
 	}
@@ -153,7 +153,7 @@
 
 - (void)setInBackgroundFlag
 {
-	inBackground = true;
+	//inBackground = true;
 }
 
 - (void)clearInBackgroundFlag
@@ -215,7 +215,23 @@
         headlight.hidden = YES;
         blinkCount = 0;
     }
-    blinker = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(blink) userInfo:nil repeats:YES];
+    else{
+        blinker = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(blink) userInfo:nil repeats:YES];
+        
+        NSString *sound = [NSString stringWithFormat:@"horn.mp3"];
+        NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], sound]];
+        NSError *error;
+        honk = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+        
+        if (honk == nil){
+            NSLog(@"%@",[error localizedDescription]);
+        }
+        else{
+            honk.volume = 1;
+            honk.numberOfLoops = 0;
+            [honk play];
+        }
+    }
 }
 
 -(void)blink{

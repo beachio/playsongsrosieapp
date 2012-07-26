@@ -32,6 +32,7 @@
     
     IBOutlet UIButton *rabbit;
 
+    UIView *overlay;
 }
 
 -(IBAction)back;
