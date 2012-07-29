@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "MHRotaryKnob.h"
 
 #define SONG_NUMBER 18
 
@@ -21,6 +22,16 @@
     NSTimer *blinker;
     NSInteger blinkCount;
     AVAudioPlayer *honk;
+    IBOutlet UIView *lockControl;
+    BOOL shuffle;
+    BOOL loop;
+    IBOutlet UILabel *trackNumber;
+    CGFloat volume;
+    NSMutableArray *shuffledSongs;
+    NSInteger shuffleIndex;
+    IBOutlet UIButton *loopButton;
+    IBOutlet UIButton *shuffleButton;
+    IBOutlet MHRotaryKnob *rotaryKnob;
 }
 
 
@@ -33,10 +44,13 @@
 -(IBAction)pause:(id)sender;
 -(IBAction)previous:(id)sender;
 -(IBAction)next:(id)sender;
--(IBAction)stop:(id)sender;
 -(IBAction)progressSliderMoved:(UISlider*)sender;
 -(IBAction)back;
 -(IBAction)carPressed:(id)sender;
+-(IBAction)lockControls:(id)sender;
+-(IBAction)shuffle:(id)sender;
+-(IBAction)loop:(id)sender;
+
 
 @property (nonatomic, retain) AVAudioPlayer *player;
 @property (nonatomic, retain) NSTimer *updateTimer;

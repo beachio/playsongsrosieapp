@@ -21,6 +21,19 @@
     self = [super initWithNibName:@"SongViewController" bundle:nil];
     if (self) {
         self.index = anIndex + 1;
+        if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstRun"]) {
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"shuffle"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"loop"];
+            [[NSUserDefaults standardUserDefaults] setFloat:1.0f forKey:@"volume"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+
+        shuffle = [[NSUserDefaults standardUserDefaults] boolForKey:@"shuffle"];
+        loop = [[NSUserDefaults standardUserDefaults] boolForKey:@"loop"];
+        volume = [[NSUserDefaults standardUserDefaults] boolForKey:@"volume"];
+        shuffledSongs = [NSMutableArray array];
+        shuffleIndex = -1;
     }
     return self;
 }
@@ -53,13 +66,42 @@
 	[self registerForBackgroundNotifications];
 	
 	[self playSong:index];	
+    
+    // Setup custom slider images
+	UIImage *minImage = [UIImage imageNamed:@"progress_bar.png"];
+	UIImage *maxImage = [UIImage imageNamed:@"progress_bar.png"];
+	UIImage *tumbImage= [UIImage imageNamed:@"progress_indicator.png"];
 	
-	if ([UIDevice isIPad]) {
-		CGAffineTransform transform = CGAffineTransformMakeScale(2.0f, 2.0f);
-		progressView.transform = transform;
-	}
+	minImage=[minImage stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+	maxImage=[maxImage stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+    // Setup the FX slider
+	[progressView setMinimumTrackImage:minImage forState:UIControlStateNormal];
+	[progressView setMaximumTrackImage:maxImage forState:UIControlStateNormal];
+	[progressView setThumbImage:tumbImage forState:UIControlStateNormal];
+    
+//    if ([UIDevice isIPad]) {
+//        rotaryKnob = [[MHRotaryKnob alloc] initWithFrame:CGRectMake(70, 789, 86, 85)];
+//    }
+//    else{
+//        rotaryKnob = [[MHRotaryKnob alloc] initWithFrame:CGRectMake(26, 365, 35, 35)];
+//    }
+    
+    rotaryKnob.interactionStyle = MHRotaryKnobInteractionStyleRotating;
+	rotaryKnob.resetsToDefault = NO;
+	rotaryKnob.backgroundColor = [UIColor clearColor];
+	//rotaryKnob.backgroundImage = [UIImage imageNamed:@"Knob Background.png"];
+	[rotaryKnob setKnobImage:[UIImage imageNamed:@"volume_knob.png"] forState:UIControlStateNormal];
+	[rotaryKnob setKnobImage:[UIImage imageNamed:@"Knob Highlighted.png"] forState:UIControlStateHighlighted];
+	[rotaryKnob setKnobImage:[UIImage imageNamed:@"Knob Disabled.png"] forState:UIControlStateDisabled];
+	
+	[rotaryKnob addTarget:self action:@selector(rotaryKnobDidChange) forControlEvents:UIControlEventValueChanged];
 }
 
+-(void)rotaryKnobDidChange{
+    NSLog(@"%f",volume);
+    volume = rotaryKnob.value;
+    player.volume = volume;
+}
 
 -(void)playSong:(NSInteger)anIndex{
     NSString *songTitle = [NSString stringWithFormat:@"%d Audio Track.mp3", anIndex];
@@ -71,12 +113,14 @@
 		NSLog(@"%@",[error localizedDescription]);
 	}
 	else{
-		player.volume = 1;
+		player.volume = volume;
 		player.numberOfLoops = 0;
 		player.delegate = self;
 		[player prepareToPlay];
 		[player play];
 		[self updateViewForPlayerState:player];
+        
+        [trackNumber setText:[NSString stringWithFormat:@"%d",anIndex]];
 	}
 }
 
@@ -111,25 +155,47 @@
 
 
 -(IBAction)previous:(id)sender{
-	if (index > 1) {
-        index--;
-		[self playSong:index];
-	}
+    if (shuffle) {
+        if (shuffleIndex > 0) {
+            shuffleIndex--;
+            index = [(NSNumber *)[shuffledSongs objectAtIndex:shuffleIndex] intValue];
+			[self playSong:index];
+		}
+		else {
+            index = abs(arc4random() % SONG_NUMBER)+1;
+			[self playSong:index];
+            [shuffledSongs insertObject:[NSNumber numberWithInt:index]  atIndex:0];
+		}
+    }
+    else{
+        if (index > 1) {
+            index--;
+            [self playSong:index];
+        }
+    }
 }
 
 
 -(IBAction)next:(id)sender{
-    if (index < SONG_NUMBER) {
-        index++;
-        [self playSong:index];
-    }	
+    if (shuffle) {
+        shuffleIndex++;
+        if (shuffleIndex < [shuffledSongs count]) {
+            index = [(NSNumber *)[shuffledSongs objectAtIndex:shuffleIndex] intValue];
+			[self playSong:index];
+		}
+		else {
+            index = abs(arc4random() % SONG_NUMBER)+1;
+			[self playSong:index];
+            [shuffledSongs addObject:[NSNumber numberWithInt:index]];
+		}
+    }
+    else{
+        if (index < SONG_NUMBER) {
+            index++;
+            [self playSong:index];
+        }	
+    }
 }
-
-
--(IBAction)stop:(id)sender{
-	[player stop];
-}
-
 
 - (IBAction)progressSliderMoved:(UISlider *)sender{
 	player.currentTime = sender.value * player.duration;
@@ -178,7 +244,9 @@
 	{
 		[self updateViewForPlayerState:p];
 	}
-	[self next:nil];
+    if (shuffle || loop) {
+        [self next:nil];
+    }
 }
 
 
@@ -241,6 +309,48 @@
         blinkCount = 0;
         [blinker invalidate];
     }
+}
+
+-(IBAction)lockControls:(id)sender{
+    lockControl.hidden = !lockControl.hidden;
+    if(lockControl.hidden){
+        [(UIButton *)sender setImage:[UIImage imageNamed:@"lock_off.png"] forState:UIControlStateNormal];
+    }
+    else{
+        [(UIButton *)sender setImage:[UIImage imageNamed:@"lock_on.png"] forState:UIControlStateNormal];
+    }
+}
+
+-(IBAction)shuffle:(id)sender{
+    shuffle = !shuffle;
+    if (shuffle) {
+        loop = NO;
+        [loopButton setImage:[UIImage imageNamed:@"loop_depress.png"] forState:UIControlStateNormal];
+        [shuffleButton setImage:[UIImage imageNamed:@"shuffle.png"] forState:UIControlStateNormal];
+    }
+    else{
+        [shuffleButton setImage:[UIImage imageNamed:@"shuffle_depress.png"] forState:UIControlStateNormal];
+    }
+    [[NSUserDefaults standardUserDefaults] setBool:shuffle forKey:@"shuffle"];
+    [[NSUserDefaults standardUserDefaults] setBool:loop forKey:@"loop"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(IBAction)loop:(id)sender{
+    loop = !loop;
+    if (loop) {
+        shuffle = NO;
+        shuffleIndex = -1;
+        [shuffledSongs removeAllObjects];
+        [shuffleButton setImage:[UIImage imageNamed:@"shuffle_depress.png"] forState:UIControlStateNormal];
+        [loopButton setImage:[UIImage imageNamed:@"loop.png"] forState:UIControlStateNormal];
+    }
+    else{
+        [loopButton setImage:[UIImage imageNamed:@"loop_depress.png"] forState:UIControlStateNormal];
+    }
+    [[NSUserDefaults standardUserDefaults] setBool:shuffle forKey:@"shuffle"];
+    [[NSUserDefaults standardUserDefaults] setBool:loop forKey:@"loop"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(IBAction)back{
