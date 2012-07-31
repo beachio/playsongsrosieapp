@@ -18,6 +18,7 @@
     SoundHelper *soundHelper;
     Facebook* facebook;
 	NSArray* permissions;
+    AVAudioPlayer *train;
 }
 
 @property (nonatomic, strong) Facebook* facebook;

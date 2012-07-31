@@ -17,7 +17,22 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	littleCarFrame = littleCar.frame;
+    NSString *imageName;
+    if ([UIDevice isIPad]) {
+		imageName = @"Default-Portrait.png";
+    } else {
+		imageName = @"Default.png";
+    }
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    imageview.frame = CGRectMake(0, 0, imageview.frame.size.width, imageview.frame.size.height);
+	[self.view addSubview:imageview];
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(startAnim) userInfo:nil repeats:NO];
+}
+
+- (void)startAnim{
+    NSLog(@"here");
+    [[[self.view subviews] lastObject] removeFromSuperview];
+    littleCarFrame = littleCar.frame;
     nickieJillFrame = nickieJill.frame;
     
     NSInteger x,y;
@@ -36,7 +51,6 @@
     
 	[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(showLittleCarAnimation) userInfo:nil repeats:NO];
 }
-
 
 -(void)showLittleCarAnimation{
 	[UIView beginAnimations:nil context:nil];

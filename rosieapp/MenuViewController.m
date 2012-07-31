@@ -93,7 +93,7 @@ static NSString* kAppId = @"143449775745160";
 }
 
 -(IBAction)showSongList:(id)sender{
-    [soundHelper stop];
+    [train stop];
     SongListViewController *songlist = [[SongListViewController alloc] initWithNibName:@"SongListViewController" bundle:nil];
     [self.navigationController pushViewController:songlist animated:YES];
 }
@@ -112,7 +112,7 @@ static NSString* kAppId = @"143449775745160";
 }
 
 -(IBAction)showAbout:(id)sender{
-    [soundHelper stop];
+    [train stop];
     AboutViewController *about = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
     [self.navigationController pushViewController:about animated:YES];
 }
@@ -148,7 +148,25 @@ static NSString* kAppId = @"143449775745160";
     // Do any additional setup after loading the view from its nib.
     soundHelper = [[SoundHelper alloc] init];
 	[soundHelper initializeAudioPlayer];
-    [soundHelper playAudio:@"train.mp3"];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    NSString *sound = [NSString stringWithFormat:@"train.mp3"];
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], sound]];
+    NSError *error;
+    train = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    
+    if (train == nil){
+        NSLog(@"%@",[error localizedDescription]);
+    }
+    else{
+        train.volume = 1;
+        train.numberOfLoops = 0;
+        [train play];
+    }
+
 }
 
 - (void)viewDidUnload

@@ -91,8 +91,6 @@
 	rotaryKnob.backgroundColor = [UIColor clearColor];
 	//rotaryKnob.backgroundImage = [UIImage imageNamed:@"Knob Background.png"];
 	[rotaryKnob setKnobImage:[UIImage imageNamed:@"volume_knob.png"] forState:UIControlStateNormal];
-	[rotaryKnob setKnobImage:[UIImage imageNamed:@"Knob Highlighted.png"] forState:UIControlStateHighlighted];
-	[rotaryKnob setKnobImage:[UIImage imageNamed:@"Knob Disabled.png"] forState:UIControlStateDisabled];
 	
 	[rotaryKnob addTarget:self action:@selector(rotaryKnobDidChange) forControlEvents:UIControlEventValueChanged];
 }
