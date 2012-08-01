@@ -12,7 +12,7 @@
 
 #define SONG_NUMBER 18
 
-@interface SongViewController : UIViewController <AVAudioPlayerDelegate>{
+@interface SongViewController : UIViewController <AVAudioPlayerDelegate, UIGestureRecognizerDelegate>{
 	IBOutlet UISlider *progressView;
 	AVAudioPlayer *player;
 	NSTimer	*updateTimer;
@@ -32,6 +32,9 @@
     IBOutlet UIButton *loopButton;
     IBOutlet UIButton *shuffleButton;
     IBOutlet MHRotaryKnob *rotaryKnob;
+    
+    IBOutlet UIButton *controlSlide;
+    IBOutlet UIButton *backButton;
 }
 
 
@@ -47,7 +50,6 @@
 -(IBAction)progressSliderMoved:(UISlider*)sender;
 -(IBAction)back;
 -(IBAction)carPressed:(id)sender;
--(IBAction)lockControls:(id)sender;
 -(IBAction)shuffle:(id)sender;
 -(IBAction)loop:(id)sender;
 

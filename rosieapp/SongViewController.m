@@ -79,21 +79,52 @@
 	[progressView setMaximumTrackImage:maxImage forState:UIControlStateNormal];
 	[progressView setThumbImage:tumbImage forState:UIControlStateNormal];
     
-//    if ([UIDevice isIPad]) {
-//        rotaryKnob = [[MHRotaryKnob alloc] initWithFrame:CGRectMake(70, 789, 86, 85)];
-//    }
-//    else{
-//        rotaryKnob = [[MHRotaryKnob alloc] initWithFrame:CGRectMake(26, 365, 35, 35)];
-//    }
-    
     rotaryKnob.interactionStyle = MHRotaryKnobInteractionStyleRotating;
 	rotaryKnob.resetsToDefault = NO;
 	rotaryKnob.backgroundColor = [UIColor clearColor];
-	//rotaryKnob.backgroundImage = [UIImage imageNamed:@"Knob Background.png"];
 	[rotaryKnob setKnobImage:[UIImage imageNamed:@"volume_knob.png"] forState:UIControlStateNormal];
 	
 	[rotaryKnob addTarget:self action:@selector(rotaryKnobDidChange) forControlEvents:UIControlEventValueChanged];
+    
+    UISwipeGestureRecognizer *recognizer;
+    
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:UISwipeGestureRecognizerDirectionUp];
+    [recognizer setDelegate:self];
+    [[self view] addGestureRecognizer:recognizer];
+    
+    recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+    [recognizer setDirection:UISwipeGestureRecognizerDirectionDown];
+    [recognizer setDelegate:self];
+    [[self view] addGestureRecognizer:recognizer];
+
 }
+
+// Prevent recognizing touches on the slider
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    
+    if ([touch.view isKindOfClass:[UIButton class]]) {
+        return YES;
+    }
+    return NO;
+}
+
+-(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
+    
+    if ([recognizer direction] == UISwipeGestureRecognizerDirectionUp) {
+        lockControl.hidden = NO;
+        backButton.enabled = NO;
+        [controlSlide setImage:[UIImage imageNamed:@"lock_on.png"] forState:UIControlStateNormal];
+        [controlSlide setImage:[UIImage imageNamed:@"lock_on.png"] forState:UIControlStateHighlighted];
+        
+    } else {
+        lockControl.hidden = YES;
+        backButton.enabled = YES;
+        [controlSlide setImage:[UIImage imageNamed:@"lock_off.png"] forState:UIControlStateNormal];
+        [controlSlide setImage:[UIImage imageNamed:@"lock_off.png"] forState:UIControlStateHighlighted];
+    }
+}
+
 
 -(void)rotaryKnobDidChange{
     NSLog(@"%f",volume);
@@ -306,16 +337,6 @@
     if (blinkCount == 4) {
         blinkCount = 0;
         [blinker invalidate];
-    }
-}
-
--(IBAction)lockControls:(id)sender{
-    lockControl.hidden = !lockControl.hidden;
-    if(lockControl.hidden){
-        [(UIButton *)sender setImage:[UIImage imageNamed:@"lock_off.png"] forState:UIControlStateNormal];
-    }
-    else{
-        [(UIButton *)sender setImage:[UIImage imageNamed:@"lock_on.png"] forState:UIControlStateNormal];
     }
 }
 
