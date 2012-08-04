@@ -34,6 +34,11 @@
         volume = [[NSUserDefaults standardUserDefaults] boolForKey:@"volume"];
         shuffledSongs = [NSMutableArray array];
         shuffleIndex = -1;
+        
+        if (shuffle) {
+            [shuffledSongs addObject:[NSNumber numberWithInt:index]];
+            shuffleIndex++;
+        }
     }
     return self;
 }
@@ -97,6 +102,21 @@
     [recognizer setDirection:UISwipeGestureRecognizerDirectionDown];
     [recognizer setDelegate:self];
     [[self view] addGestureRecognizer:recognizer];
+    
+    origControlFrame = lockControl.frame;
+    
+    if (shuffle) {
+        [shuffleButton setImage:[UIImage imageNamed:@"shuffle.png"] forState:UIControlStateNormal];
+    }
+    else{
+        [shuffleButton setImage:[UIImage imageNamed:@"shuffle_depress.png"] forState:UIControlStateNormal];
+    }
+    if (loop) {
+        [loopButton setImage:[UIImage imageNamed:@"loop.png"] forState:UIControlStateNormal];
+    }
+    else{
+        [loopButton setImage:[UIImage imageNamed:@"loop_depress.png"] forState:UIControlStateNormal];
+    }
 
 }
 
@@ -112,22 +132,48 @@
 -(void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
     
     if ([recognizer direction] == UISwipeGestureRecognizerDirectionUp) {
-        lockControl.hidden = NO;
         backButton.enabled = NO;
         [controlSlide setImage:[UIImage imageNamed:@"lock_on.png"] forState:UIControlStateNormal];
         [controlSlide setImage:[UIImage imageNamed:@"lock_on.png"] forState:UIControlStateHighlighted];
         
+        CGRect newframe;
+        if([UIDevice isIPad]){
+            newframe = CGRectMake(710, 748, lockControl.frame.size.width, lockControl.frame.size.height);
+        }
+        else{
+            newframe = CGRectMake(295, 342, lockControl.frame.size.width, lockControl.frame.size.height);
+        }
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationDelay:0.0];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationDelegate:self];
+                
+        lockControl.frame = newframe;
+		
+        [UIView commitAnimations];
+        
+        
     } else {
-        lockControl.hidden = YES;
         backButton.enabled = YES;
         [controlSlide setImage:[UIImage imageNamed:@"lock_off.png"] forState:UIControlStateNormal];
         [controlSlide setImage:[UIImage imageNamed:@"lock_off.png"] forState:UIControlStateHighlighted];
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationDelay:0.0];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationDelegate:self];
+        
+        lockControl.frame = origControlFrame;
+		
+        [UIView commitAnimations];
     }
 }
 
 
 -(void)rotaryKnobDidChange{
-    NSLog(@"%f",volume);
     volume = rotaryKnob.value;
     player.volume = volume;
 }
@@ -187,42 +233,121 @@
     if (shuffle) {
         if (shuffleIndex > 0) {
             shuffleIndex--;
+        }
+        else{
+            if (loop) {
+                if ([shuffledSongs count] == SONG_NUMBER) {
+                    shuffleIndex = SONG_NUMBER - 1;
+                }
+                else{
+                    shuffleIndex = -1;
+                }
+            }
+            else{
+                return;
+            }
+        }
+        
+        if (shuffleIndex >= 0) {
             index = [(NSNumber *)[shuffledSongs objectAtIndex:shuffleIndex] intValue];
-			[self playSong:index];
-		}
-		else {
-            index = abs(arc4random() % SONG_NUMBER)+1;
-			[self playSong:index];
-            [shuffledSongs insertObject:[NSNumber numberWithInt:index]  atIndex:0];
-		}
-    }
-    else{
-        if (index > 1) {
-            index--;
             [self playSong:index];
         }
+        else {
+            while (1) {
+                BOOL unique = YES;
+                NSInteger rand = abs(arc4random() % SONG_NUMBER)+1;
+                for(NSNumber *num in shuffledSongs){
+                    if ([num intValue] == rand) {
+                        unique = NO;
+                        break;
+                    }
+                }
+                if (unique) {
+                    index = rand;
+                    break;
+                }
+            }
+            [self playSong:index];
+            [shuffledSongs insertObject:[NSNumber numberWithInt:index]  atIndex:0];
+            shuffleIndex = 0;
+        }
+    }
+    else{
+        if (loop) {
+            if (index > 1) {
+                index--;
+            }	
+            else{
+                index = 18;
+            }
+            [self playSong:index];
+        }
+        else{
+            if (index > 1) {
+                index--;
+                [self playSong:index];
+            }
+        }
+        
     }
 }
 
 
 -(IBAction)next:(id)sender{
     if (shuffle) {
-        shuffleIndex++;
+        if (shuffleIndex < SONG_NUMBER - 1) {
+            shuffleIndex++;
+        }
+        else{
+            if (loop) {
+                shuffleIndex = 0;
+            }
+            else{
+                return;
+            }
+        }
+        
+        
         if (shuffleIndex < [shuffledSongs count]) {
             index = [(NSNumber *)[shuffledSongs objectAtIndex:shuffleIndex] intValue];
-			[self playSong:index];
-		}
-		else {
-            index = abs(arc4random() % SONG_NUMBER)+1;
-			[self playSong:index];
+            [self playSong:index];
+        }
+        else {
+            while (1) {
+                BOOL unique = YES;
+                NSInteger rand = abs(arc4random() % SONG_NUMBER)+1;
+                for(NSNumber *num in shuffledSongs){
+                    if ([num intValue] == rand) {
+                        unique = NO;
+                        break;
+                    }
+                }
+                if (unique) {
+                    index = rand;
+                    break;
+                }
+            }
+            [self playSong:index];
             [shuffledSongs addObject:[NSNumber numberWithInt:index]];
-		}
+        }
     }
     else{
-        if (index < SONG_NUMBER) {
-            index++;
+        if (loop) {
+            if (index < SONG_NUMBER) {
+                index++;
+            }	
+            else{
+                index = 1;
+            }
             [self playSong:index];
-        }	
+        }
+        else{
+            if (index < SONG_NUMBER) {
+                index++;
+                [self playSong:index];
+            }
+        }
+        
     }
 }
 
@@ -343,31 +468,27 @@
 -(IBAction)shuffle:(id)sender{
     shuffle = !shuffle;
     if (shuffle) {
-        loop = NO;
-        [loopButton setImage:[UIImage imageNamed:@"loop_depress.png"] forState:UIControlStateNormal];
+        [shuffledSongs addObject:[NSNumber numberWithInt:index]];
+        shuffleIndex = 0;
         [shuffleButton setImage:[UIImage imageNamed:@"shuffle.png"] forState:UIControlStateNormal];
     }
     else{
+        shuffleIndex = -1;
+        [shuffledSongs removeAllObjects];
         [shuffleButton setImage:[UIImage imageNamed:@"shuffle_depress.png"] forState:UIControlStateNormal];
     }
     [[NSUserDefaults standardUserDefaults] setBool:shuffle forKey:@"shuffle"];
-    [[NSUserDefaults standardUserDefaults] setBool:loop forKey:@"loop"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 -(IBAction)loop:(id)sender{
     loop = !loop;
     if (loop) {
-        shuffle = NO;
-        shuffleIndex = -1;
-        [shuffledSongs removeAllObjects];
-        [shuffleButton setImage:[UIImage imageNamed:@"shuffle_depress.png"] forState:UIControlStateNormal];
         [loopButton setImage:[UIImage imageNamed:@"loop.png"] forState:UIControlStateNormal];
     }
     else{
         [loopButton setImage:[UIImage imageNamed:@"loop_depress.png"] forState:UIControlStateNormal];
     }
-    [[NSUserDefaults standardUserDefaults] setBool:shuffle forKey:@"shuffle"];
     [[NSUserDefaults standardUserDefaults] setBool:loop forKey:@"loop"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

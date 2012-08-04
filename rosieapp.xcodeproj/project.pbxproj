@@ -149,6 +149,13 @@
 		2D776535159EE81000B579A7 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D776534159EE81000B579A7 /* Default-Portrait.png */; };
 		2D97987A15A041C00098E4ED /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D97987915A041C00098E4ED /* UIDevice+Hardware.m */; };
 		2D97987C15A04A2E0098E4ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D97987B15A04A2E0098E4ED /* QuartzCore.framework */; };
+		2D9CE5F315CD1ED100E26992 /* blistering barnacles.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D9CE5EC15CD1ED100E26992 /* blistering barnacles.mp3 */; };
+		2D9CE5F415CD1ED100E26992 /* great choice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D9CE5ED15CD1ED100E26992 /* great choice.mp3 */; };
+		2D9CE5F515CD1ED100E26992 /* hello.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D9CE5EE15CD1ED100E26992 /* hello.mp3 */; };
+		2D9CE5F615CD1ED100E26992 /* or tickle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D9CE5EF15CD1ED100E26992 /* or tickle.mp3 */; };
+		2D9CE5F715CD1ED100E26992 /* play.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D9CE5F015CD1ED100E26992 /* play.mp3 */; };
+		2D9CE5F815CD1ED100E26992 /* song from clouds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D9CE5F115CD1ED100E26992 /* song from clouds.mp3 */; };
+		2D9CE5F915CD1ED100E26992 /* song_list_ambient.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2D9CE5F215CD1ED100E26992 /* song_list_ambient.mp3 */; };
 		2DADC4C815C0724400BFD447 /* bleat1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DADC4C315C0724400BFD447 /* bleat1.mp3 */; };
 		2DADC4C915C0724400BFD447 /* bleat2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DADC4C415C0724400BFD447 /* bleat2.mp3 */; };
 		2DADC4CA15C0724400BFD447 /* horn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DADC4C515C0724400BFD447 /* horn.mp3 */; };
@@ -360,6 +367,13 @@
 		2D97987815A041C00098E4ED /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
 		2D97987915A041C00098E4ED /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
 		2D97987B15A04A2E0098E4ED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2D9CE5EC15CD1ED100E26992 /* blistering barnacles.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "blistering barnacles.mp3"; sourceTree = "<group>"; };
+		2D9CE5ED15CD1ED100E26992 /* great choice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "great choice.mp3"; sourceTree = "<group>"; };
+		2D9CE5EE15CD1ED100E26992 /* hello.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hello.mp3; sourceTree = "<group>"; };
+		2D9CE5EF15CD1ED100E26992 /* or tickle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "or tickle.mp3"; sourceTree = "<group>"; };
+		2D9CE5F015CD1ED100E26992 /* play.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = play.mp3; sourceTree = "<group>"; };
+		2D9CE5F115CD1ED100E26992 /* song from clouds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "song from clouds.mp3"; sourceTree = "<group>"; };
+		2D9CE5F215CD1ED100E26992 /* song_list_ambient.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song_list_ambient.mp3; sourceTree = "<group>"; };
 		2DADC4C315C0724400BFD447 /* bleat1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bleat1.mp3; sourceTree = "<group>"; };
 		2DADC4C415C0724400BFD447 /* bleat2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bleat2.mp3; sourceTree = "<group>"; };
 		2DADC4C515C0724400BFD447 /* horn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = horn.mp3; sourceTree = "<group>"; };
@@ -467,6 +481,13 @@
 		2D4302CB15BEDFEC00DD7D7B /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				2D9CE5EC15CD1ED100E26992 /* blistering barnacles.mp3 */,
+				2D9CE5ED15CD1ED100E26992 /* great choice.mp3 */,
+				2D9CE5EE15CD1ED100E26992 /* hello.mp3 */,
+				2D9CE5EF15CD1ED100E26992 /* or tickle.mp3 */,
+				2D9CE5F015CD1ED100E26992 /* play.mp3 */,
+				2D9CE5F115CD1ED100E26992 /* song from clouds.mp3 */,
+				2D9CE5F215CD1ED100E26992 /* song_list_ambient.mp3 */,
 				2DADC4C315C0724400BFD447 /* bleat1.mp3 */,
 				2DADC4C415C0724400BFD447 /* bleat2.mp3 */,
 				2DADC4C515C0724400BFD447 /* horn.mp3 */,
@@ -1010,6 +1031,13 @@
 				2DB994E615C593AC00E759A7 /* volume_knob@2x.png in Resources */,
 				2DB994E715C593AC00E759A7 /* volume_knob~ipad.png in Resources */,
 				2DB994E915C593FE00E759A7 /* SongViewController~ipad.xib in Resources */,
+				2D9CE5F315CD1ED100E26992 /* blistering barnacles.mp3 in Resources */,
+				2D9CE5F415CD1ED100E26992 /* great choice.mp3 in Resources */,
+				2D9CE5F515CD1ED100E26992 /* hello.mp3 in Resources */,
+				2D9CE5F615CD1ED100E26992 /* or tickle.mp3 in Resources */,
+				2D9CE5F715CD1ED100E26992 /* play.mp3 in Resources */,
+				2D9CE5F815CD1ED100E26992 /* song from clouds.mp3 in Resources */,
+				2D9CE5F915CD1ED100E26992 /* song_list_ambient.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

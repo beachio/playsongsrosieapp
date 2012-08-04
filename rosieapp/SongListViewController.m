@@ -39,13 +39,23 @@
         welcomeMessages = [[NSMutableArray alloc] initWithObjects:@"Hello my friends!",
                            @"Are you here to play with me?",
                            @"You can pick a song from the clouds...",
-                           @"Or tickle my ears and I'll pick you a song!",
+                           @"Or tickle my ears and I'll pick us a song!",
+                           nil];
+        
+        welcomeSounds = [[NSMutableArray alloc] initWithObjects:@"hello.mp3",
+                           @"play.mp3",
+                           @"song from clouds.mp3",
+                           @"or tickle.mp3",
                            nil];
         
         songChoiceMessages = [[NSMutableArray alloc] initWithObjects:@"Blistering Barnacles! Great choice. Here we go...",
                               nil];
         
+        songChoiceSounds = [[NSMutableArray alloc] initWithObjects:@"blistering barnacles.mp3",
+                              nil];
+        
         currentMsg = 0;
+        soundHelper = [[SoundHelper alloc] init];
     }
     return self;
 }
@@ -101,6 +111,28 @@
     
     overlay = [[UIView alloc] initWithFrame:self.view.bounds];
     overlay.backgroundColor = [UIColor clearColor];
+    
+    NSString *songTitle = @"song_list_ambient.mp3";
+	NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], songTitle]];
+	NSError *error;
+	ambient = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+	if (ambient == nil){
+		NSLog(@"%@",[error localizedDescription]);
+	}
+	else{
+		ambient.volume = 1;
+		ambient.numberOfLoops = 0;
+		[ambient prepareToPlay];
+		[ambient play];
+	}
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [ambient play];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [ambient stop];
 }
 
 -(void)loadScrollViewWithPage:(NSInteger)page{
@@ -164,22 +196,28 @@
 }
 
 -(void)cloudPressed:(id)sender{
+    if (playSong) {
+        return;
+    }
+    playSong = YES;
+    [self.view addSubview:overlay];
     if ([msgTimer isValid]) {
         NSLog(@"Timer invalidated");
         [msgTimer invalidate];
     }
     trackNumber = [(UIButton *)sender tag];
-    NSString * msg = [songChoiceMessages objectAtIndex:arc4random()%[songChoiceMessages count]];
+    NSString * msg = [songChoiceMessages objectAtIndex:0];
+    [soundHelper playAudio:[songChoiceSounds objectAtIndex:0]];
     [self setRabbitMsgText:msg];
-    [self.view addSubview:overlay];
-    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(playSong) userInfo:nil repeats:NO];
+    [NSTimer scheduledTimerWithTimeInterval:4.5 target:self selector:@selector(playSong) userInfo:nil repeats:NO];
 }
 
      
 -(void)switchMsg{
     if (currentMsg < [welcomeMessages count]) {
         [self setRabbitMsgText:[welcomeMessages objectAtIndex:currentMsg]];
-         currentMsg++;
+        [soundHelper playAudio:[welcomeSounds objectAtIndex:currentMsg]];
+        currentMsg++;
     }
     else{
         NSLog(@"Timer invalidated");
@@ -204,14 +242,19 @@
 }
 
 -(IBAction)randomSong:(id)sender{
+    if (playSong) {
+        return;
+    }
+    playSong = YES;
+    [self.view addSubview:overlay];
     if ([msgTimer isValid]) {
         NSLog(@"Timer invalidated");
         [msgTimer invalidate];
     }
     trackNumber = arc4random()%[songList count] + 1;
-    [self setRabbitMsgText:@"Here we go..."];
-    [self.view addSubview:overlay];
-    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(playSong) userInfo:nil repeats:NO];
+    [self setRabbitMsgText:@"Great choice. Here we go..."];
+    [soundHelper playAudio:@"great choice.mp3"];
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(playSong) userInfo:nil repeats:NO];
 }
 
 -(void)setRabbitMsgText:(NSString *)msg{
@@ -230,6 +273,7 @@
     SongViewController *songController = [[SongViewController alloc] initWithIndex:trackNumber];
     [self.navigationController pushViewController:songController animated:YES];
     [overlay removeFromSuperview];
+    playSong = NO;
 }
 
 - (void)viewDidUnload

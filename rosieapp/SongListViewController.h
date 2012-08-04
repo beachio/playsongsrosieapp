@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "OBShapedButton.h"
+#import <AVFoundation/AVFoundation.h>
+#import "SoundHelper.h"
 
 @interface SongListViewController : UIViewController{
     NSMutableArray *songList;
@@ -33,6 +35,15 @@
     IBOutlet UIButton *rabbit;
 
     UIView *overlay;
+    
+    BOOL playSong;
+    
+    AVAudioPlayer *ambient;
+    
+    SoundHelper *soundHelper;
+    
+    NSMutableArray *welcomeSounds;
+    NSMutableArray *songChoiceSounds;
 }
 
 -(IBAction)back;

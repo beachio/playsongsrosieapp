@@ -31,10 +31,15 @@
     NSInteger shuffleIndex;
     IBOutlet UIButton *loopButton;
     IBOutlet UIButton *shuffleButton;
+    IBOutlet UIButton *prevButton;
+    IBOutlet UIButton *nextButton;
     IBOutlet MHRotaryKnob *rotaryKnob;
     
     IBOutlet UIButton *controlSlide;
     IBOutlet UIButton *backButton;
+    
+    CGRect origControlFrame;
+    
 }
 
 
