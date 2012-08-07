@@ -141,7 +141,7 @@
             newframe = CGRectMake(710, 748, lockControl.frame.size.width, lockControl.frame.size.height);
         }
         else{
-            newframe = CGRectMake(295, 342, lockControl.frame.size.width, lockControl.frame.size.height);
+            newframe = CGRectMake(283, 309, lockControl.frame.size.width, lockControl.frame.size.height);
         }
         
         [UIView beginAnimations:nil context:nil];

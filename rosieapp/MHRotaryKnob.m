@@ -365,7 +365,7 @@ const float MIN_DISTANCE_SQUARED = 16.0f;
 
 		// We don't want the knob to jump from minimum to maximum or vice versa
 		// so disallow huge changes.
-		if (fabsf(delta) > 45.0f)
+		if (fabsf(delta) > 90.0f)
 			return NO;
 
 		self.value += (maximumValue - minimumValue) * delta / (MAX_ANGLE*2.0f);
