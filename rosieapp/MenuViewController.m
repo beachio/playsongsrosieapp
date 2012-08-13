@@ -10,7 +10,7 @@
 #import "SongListViewController.h"
 #import "UIDevice+Hardware.h"
 
-static NSString* kAppId = @"143449775745160";
+static NSString* kAppId = @"428037127238161";
 
 @implementation MenuViewController
 @synthesize facebook;
@@ -34,10 +34,9 @@ static NSString* kAppId = @"143449775745160";
 	NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 								   @"http://playsongsplus.com", @"link",
 								   @"http://playsongsplus.com/wp-content/uploads/2009/02/rosie-front-small.jpg", @"picture",
-								   @"Rosie Songs iOS App", @"name",
-								   @"Rosie songs app for iphone and ipad", @"caption",
-								   @"Rosie songs is iphone and ipad application for children.", @"description",
-								   @"I love rosie songs",  @"message",
+								   @"I'm playing with my Rosie - The Little Red Car iOS app", @"name",
+								   @"Rosie the Little Red Car contains 18 wonderful original playsongs for under 5's", @"caption",
+								   @"By Ruplay.co.uk and Playsongs Plus for iPad and iPhone", @"description",
 								   nil];
 	
 	[facebook dialog:@"feed" andParams:params andDelegate:self];

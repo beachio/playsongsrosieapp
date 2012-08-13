@@ -24,7 +24,13 @@
 		imageName = @"Default.png";
     }
     UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
-    imageview.frame = CGRectMake(0, 0, imageview.frame.size.width, imageview.frame.size.height);
+    
+    if ([UIDevice isIPad]) {
+		imageview.frame = CGRectMake(0, [[UIApplication sharedApplication] statusBarFrame].size.height, imageview.frame.size.width, imageview.frame.size.height);
+    } else {
+		imageview.frame = CGRectMake(0, 0, imageview.frame.size.width, imageview.frame.size.height);
+    }
+    
 	[self.view addSubview:imageview];
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(startAnim) userInfo:nil repeats:NO];
 }
