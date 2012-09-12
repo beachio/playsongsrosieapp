@@ -179,7 +179,7 @@
 }
 
 -(void)playSong:(NSInteger)anIndex{
-    NSString *songTitle = [NSString stringWithFormat:@"%d Audio Track.mp3", anIndex];
+    NSString *songTitle = [NSString stringWithFormat:@"%d Audio Track.m4a", anIndex];
 	NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], songTitle]];
 	NSError *error;
 	self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
@@ -440,7 +440,7 @@
     else{
         blinker = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(blink) userInfo:nil repeats:YES];
         
-        NSString *sound = [NSString stringWithFormat:@"horn.mp3"];
+        NSString *sound = [NSString stringWithFormat:@"Rosie Beep %d.mp3", rand()%2+1];
         NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], sound]];
         NSError *error;
         honk = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];

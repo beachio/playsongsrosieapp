@@ -23,20 +23,104 @@
     } else {
 		imageName = @"Default.png";
     }
-    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    brand = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     
     if ([UIDevice isIPad]) {
-		imageview.frame = CGRectMake(0, [[UIApplication sharedApplication] statusBarFrame].size.height, imageview.frame.size.width, imageview.frame.size.height);
+		brand.frame = CGRectMake(0, [[UIApplication sharedApplication] statusBarFrame].size.height, brand.frame.size.width, brand.frame.size.height);
     } else {
-		imageview.frame = CGRectMake(0, 0, imageview.frame.size.width, imageview.frame.size.height);
+		brand.frame = CGRectMake(0, 0, brand.frame.size.width, brand.frame.size.height);
     }
     
-	[self.view addSubview:imageview];
-    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(startAnim) userInfo:nil repeats:NO];
+	[self.view addSubview:brand];
+    [NSTimer scheduledTimerWithTimeInterval:0.0 target:self selector:@selector(showLogo) userInfo:nil repeats:NO];
+}
+
+- (void)showLogo{
+    NSInteger x,y;
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ruplay.png"]];
+	if ([UIDevice isIPad]) {
+		x = (self.view.bounds.size.width - imageview.frame.size.width)/2;
+        y = 220;
+    } else {
+		x = (self.view.bounds.size.width - imageview.frame.size.width)/2;
+        y = 100;
+    }
+    imageview.alpha = 0;
+    imageview.frame = CGRectMake(x, y, imageview.frame.size.width, imageview.frame.size.height);
+    [brand addSubview:imageview];
+    
+    [UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:1];
+	[UIView setAnimationDelay:0.0];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(showDesc)];
+	
+    imageview.alpha = 1;
+    
+	[UIView commitAnimations];
+}
+
+- (void)showDesc{
+    NSInteger x,y;
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ruplay_desc.png"]];
+	if ([UIDevice isIPad]) {
+		x = (self.view.bounds.size.width - imageview.frame.size.width)/2;
+        y = 550;
+    } else {
+		x = (self.view.bounds.size.width - imageview.frame.size.width)/2;
+        y = 280;
+    }
+    imageview.alpha = 0;
+    imageview.frame = CGRectMake(x, y, imageview.frame.size.width, imageview.frame.size.height);
+    [brand addSubview:imageview];
+    
+    [UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:1];
+	[UIView setAnimationDelay:0.0];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(showLink)];
+	
+    imageview.alpha = 1;
+    
+	[UIView commitAnimations];
+}
+
+- (void)showLink{
+    NSInteger x,y;
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ruplay_link.png"]];
+	if ([UIDevice isIPad]) {
+		x = (self.view.bounds.size.width - imageview.frame.size.width)/2;
+        y = 1024;
+    } else {
+		x = (self.view.bounds.size.width - imageview.frame.size.width)/2;
+        y = 480;
+    }
+    imageview.frame = CGRectMake(x, y, imageview.frame.size.width, imageview.frame.size.height);
+    [brand addSubview:imageview];
+    
+    if ([UIDevice isIPad]) {
+		x = (self.view.bounds.size.width - imageview.frame.size.width)/2;
+        y = 920;
+    } else {
+		x = (self.view.bounds.size.width - imageview.frame.size.width)/2;
+        y = 440;
+    }
+    [UIView beginAnimations:nil context:nil];
+	[UIView setAnimationDuration:0.8];
+	[UIView setAnimationDelay:0.0];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(startAnim)];
+	
+    imageview.frame = CGRectMake(x, y, imageview.frame.size.width, imageview.frame.size.height);;
+    
+	[UIView commitAnimations];
 }
 
 - (void)startAnim{
-    NSLog(@"here");
+    sleep(2);
     [[[self.view subviews] lastObject] removeFromSuperview];
     littleCarFrame = littleCar.frame;
     nickieJillFrame = nickieJill.frame;

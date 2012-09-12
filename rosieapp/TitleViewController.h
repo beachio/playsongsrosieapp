@@ -18,6 +18,7 @@
     
     CGRect littleCarFrame;
     CGRect nickieJillFrame;
+    UIImageView *brand;
 }
 
 @end

@@ -69,7 +69,7 @@
 					<object class="IBUILabel" id="1051504066">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{34, 342}, {144, 61}}</string>
+						<string key="NSFrame">{{20, 350}, {144, 61}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="779986361"/>
@@ -81,13 +81,14 @@
 						<string key="IBUIText"/>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC45NTY1MjE3MzkxIDAuOTU2NTIxNzM5MSAwLjk1NjUyMTczOTEAA</bytes>
+							<bytes key="NSRGB">MC4xMTk1NjUyMTc0IDAuMTE5NTY1MjE3NCAwLjExOTU2NTIxNzQAA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<string key="IBUIShadowOffset">{1, 1}</string>
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">10</float>
 						<int key="IBUINumberOfLines">3</int>
+						<int key="IBUITextAlignment">1</int>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">1</int>
 							<double key="pointSize">14</double>
@@ -404,7 +405,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="bubble.png">{257, 116}</string>
+			<string key="bubble.png">{257, 129}</string>
 			<string key="playsong_logo.png">{136, 34}</string>
 			<string key="rabbit.png">{132, 93}</string>
 			<string key="song_list_bg.png">{320, 480}</string>
